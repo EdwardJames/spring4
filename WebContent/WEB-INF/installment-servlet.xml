@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.1.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+        http://code.alibabatech.com/schema/dubbo 
+    	http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<aop:aspectj-autoproxy />
+
+	<context:component-scan base-package="com" />
+
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+<!--  	<mvc:interceptors> -->
+<!--  		<mvc:interceptor> -->
+<!--  			<mvc:mapping path="/fws/**/*" /> -->
+<!--  			<mvc:exclude-mapping path="/fws/commodity/sku/detail/**/*" /> -->
+<!--  			<mvc:exclude-mapping path="/fws/commodity/sku/list/**/*" /> -->
+<!--  			<mvc:exclude-mapping path="/fws/commodity/cate/list/*" /> -->
+<!--  			<mvc:exclude-mapping path="/fws/trade/query/**"/> -->
+<!--  			<mvc:exclude-mapping path="/fws/trade/uptime"/> -->
+<!--  			<mvc:exclude-mapping path="/fws/trade/apply/aftersale"/> -->
+<!--  			<mvc:exclude-mapping path="/fws/trade/sendRechargeRes"/> -->
+<!-- 			<mvc:exclude-mapping path="/fws/batch/**"/> -->
+<!--  			<bean class="com.mljr.yourcredit.installment.interceptor.AppAccessInterceptor" /> -->
+<!--  		</mvc:interceptor> -->
+ 		
+<!--  		<mvc:interceptor> -->
+<!--  			<mvc:mapping path="/fws/**/*"/> -->
+<!--  			<bean class="com.mljr.yourcredit.installment.interceptor.AuthenticationInterceptor" /> -->
+<!--  		</mvc:interceptor> -->
+<!--  	</mvc:interceptors> -->
+</beans>
